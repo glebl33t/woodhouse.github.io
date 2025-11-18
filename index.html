@@ -79,6 +79,8 @@
       margin-right: auto;
       padding: 30px 25px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      /* ОТСТУП ДЛЯ ДЕСКТОПА */
+      margin-top: 80px;
     }
 
     section { margin-bottom: 50px; }
@@ -194,6 +196,13 @@
     .lightbox .prev { left: 20px; }
     .lightbox .next { right: 20px; }
 
+    /* Десктопная версия */
+    @media (min-width: 769px) {
+      main {
+        margin-top: 80px; /* Отступ для фиксированной шапки на десктопе */
+      }
+    }
+
     /* Мобильная версия */
     @media (max-width: 768px) {
       body {
@@ -223,7 +232,7 @@
       }
       
       main {
-        margin-top: 0;
+        margin-top: 0; /* На мобильных убираем margin-top т.к. есть padding-top у body */
         margin-left: 10px;
         margin-right: 10px;
         padding: 20px 15px;
