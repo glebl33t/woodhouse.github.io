@@ -23,14 +23,21 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0,0,0,0.9);
+      background: rgba(0,0,0,0.95);
       backdrop-filter: blur(4px);
       z-index: 1000;
-      transition: transform 0.3s ease-in-out;
+      transition: all 0.4s ease;
+      border-bottom: 2px solid #8b5e3c;
     }
 
-    header.hidden {
+    header.scrolled {
       transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    header.visible {
+      transform: translateY(0);
+      opacity: 1;
     }
 
     nav {
@@ -39,11 +46,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
+      padding: 12px 20px;
     }
 
     nav .logo {
-      font-size: 1.8em;
+      font-size: 1.6em;
       font-weight: 700;
       color: #fff;
       text-transform: uppercase;
@@ -59,12 +66,12 @@
       color: #fff;
       font-weight: 500;
       transition: color 0.2s;
+      font-size: 0.95em;
     }
 
     nav ul li a:hover { color: #f0c27b; }
 
     main {
-      margin-top: 90px;
       background-color: rgba(255,255,255,0.95);
       border-radius: 12px;
       max-width: 1000px;
@@ -189,27 +196,37 @@
 
     /* Мобильная версия */
     @media (max-width: 768px) {
-      main {
-        margin-top: 100px;
-        margin-left: 15px;
-        margin-right: 15px;
-        padding: 20px 15px;
+      body {
+        padding-top: 70px; /* Отступ для фиксированной шапки */
+      }
+      
+      header {
+        height: 70px; /* Фиксированная высота */
       }
       
       nav {
-        padding: 10px 15px;
+        padding: 8px 15px;
+        height: 100%;
       }
       
       nav .logo {
-        font-size: 1.4em;
+        font-size: 1.3em;
       }
       
       nav ul {
-        gap: 15px;
+        gap: 12px;
       }
       
       nav ul li a {
-        font-size: 0.9em;
+        font-size: 0.85em;
+        padding: 5px 8px;
+      }
+      
+      main {
+        margin-top: 0;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 20px 15px;
       }
       
       .services {
@@ -234,19 +251,37 @@
         padding: 12px 10px;
         font-size: 0.9em;
       }
+      
+      section {
+        margin-bottom: 40px;
+      }
+      
+      h2 {
+        font-size: 1.4em;
+        margin-top: 10px;
+      }
     }
 
     @media (max-width: 480px) {
-      main {
-        margin-top: 90px;
+      body {
+        padding-top: 60px;
+      }
+      
+      header {
+        height: 60px;
+      }
+      
+      nav .logo {
+        font-size: 1.2em;
       }
       
       nav ul {
-        gap: 10px;
+        gap: 8px;
       }
       
       nav ul li a {
-        font-size: 0.85em;
+        font-size: 0.8em;
+        padding: 4px 6px;
       }
     }
   </style>
@@ -331,28 +366,28 @@
 </div>
 
 <script>
-  // Умная шапка, скрывающаяся при скролле
-  let lastScrollTop = 0;
+  // Простая логика скрытия шапки при скролле
+  let lastScrollY = window.scrollY;
   const header = document.getElementById('mainHeader');
-  const scrollThreshold = 100; // Начинаем скрывать после 100px скролла
 
-  window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    if (scrollTop > scrollThreshold) {
-      if (scrollTop > lastScrollTop) {
-        // Скролл вниз - скрываем шапку
-        header.classList.add('hidden');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) { // Начинаем работать после 100px скролла
+      if (window.scrollY > lastScrollY) {
+        // Скроллим вниз - скрываем
+        header.classList.add('scrolled');
+        header.classList.remove('visible');
       } else {
-        // Скролл вверх - показываем шапку
-        header.classList.remove('hidden');
+        // Скроллим вверх - показываем
+        header.classList.remove('scrolled');
+        header.classList.add('visible');
       }
     } else {
-      // Вверху страницы - всегда показываем шапку
-      header.classList.remove('hidden');
+      // Вверху страницы - всегда показываем
+      header.classList.remove('scrolled');
+      header.classList.add('visible');
     }
     
-    lastScrollTop = scrollTop;
+    lastScrollY = window.scrollY;
   });
 
   // Элементы лайтбокса
