@@ -9,13 +9,16 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: url('https://ckgroup.by/wp-content/uploads/2025/02/banya-bogushovo_0002_img_1863.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #2e2e2e;
-      scroll-behavior: smooth;
-    }
+   body {
+    background: 
+        repeating-linear-gradient(
+            90deg,
+            #5d4037,
+            #5d4037 20px,
+            #4e342e 20px,
+            #4e342e 40px
+        );
+}
 
     a { text-decoration: none; color: inherit; }
 
@@ -23,7 +26,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0,0,0,0.95);
+      background: rgba(0,0,0,0.9);
       backdrop-filter: blur(4px);
       z-index: 1000;
       transition: all 0.4s ease;
@@ -46,11 +49,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 20px;
+      padding: 15px 20px;
     }
 
     nav .logo {
-      font-size: 1.6em;
+      font-size: 1.8em;
       font-weight: 700;
       color: #fff;
       text-transform: uppercase;
@@ -59,14 +62,14 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 20px;
+      gap: 25px;
     }
 
     nav ul li a {
       color: #fff;
       font-weight: 500;
       transition: color 0.2s;
-      font-size: 0.95em;
+      font-size: 1em;
     }
 
     nav ul li a:hover { color: #f0c27b; }
@@ -75,59 +78,65 @@
       background-color: rgba(255,255,255,0.95);
       border-radius: 12px;
       max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 30px 25px;
+      margin: 100px auto 0 auto;
+      padding: 40px 35px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      /* ОТСТУП ДЛЯ ДЕСКТОПА */
-      margin-top: 80px;
     }
 
-    section { margin-bottom: 50px; }
+    section { margin-bottom: 60px; }
 
     h2 {
       color: #8b5e3c;
       border-left: 5px solid #8b5e3c;
-      padding-left: 10px;
-      font-size: 1.6em;
-      margin-bottom: 15px;
+      padding-left: 15px;
+      font-size: 1.8em;
+      margin-bottom: 25px;
     }
 
-    p { line-height: 1.6; margin-bottom: 15px; }
+    p { 
+      line-height: 1.7; 
+      margin-bottom: 20px;
+      font-size: 1.1em;
+    }
 
     .services, .advantages, .gallery {
       display: grid;
-      gap: 20px;
+      gap: 25px;
     }
 
-    .services { grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
+    .services { grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); }
     .card, .advantage {
       background: #fff8f2;
       border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      padding: 20px;
+      padding: 25px 20px;
       text-align: center;
       font-weight: 600;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      font-size: 1.1em;
     }
 
     .card:hover, .advantage:hover {
       transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     }
 
-    .gallery { grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); }
+    .gallery { grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); }
     .gallery img {
       width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       transition: transform 0.3s ease;
       cursor: pointer;
     }
 
-    .gallery img:hover { transform: scale(1.05); }
+    .gallery img:hover { transform: scale(1.03); }
 
-    .contacts { text-align: center; font-size: 1.1em; line-height: 1.8; }
+    .contacts { 
+      text-align: center; 
+      font-size: 1.2em; 
+      line-height: 1.8; 
+    }
     .contacts a { color: #8b5e3c; font-weight: 600; }
     .contacts a:hover { text-decoration: underline; }
 
@@ -135,33 +144,38 @@
       background-color: rgba(0,0,0,0.7);
       color: white;
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      margin-top: 40px;
+      padding: 25px;
+      font-size: 1em;
+      margin-top: 60px;
     }
 
     .fixed-buttons {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 30px;
+      right: 30px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       z-index: 1000;
     }
 
     .fixed-buttons a {
       background-color: #8b5e3c;
       color: white;
-      padding: 12px 18px;
+      padding: 15px 22px;
       border-radius: 50px;
       font-weight: 600;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      transition: background 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      font-size: 1.1em;
     }
 
-    .fixed-buttons a:hover { background-color: #a06b42; }
+    .fixed-buttons a:hover { 
+      background-color: #a06b42;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    }
 
     .lightbox {
       display: none;
@@ -171,46 +185,43 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.9);
       justify-content: center;
       align-items: center;
     }
     .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      max-width: 85%;
+      max-height: 85%;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.6);
     }
     .lightbox .close, .lightbox .prev, .lightbox .next {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       color: white;
-      font-size: 2em;
+      font-size: 2.5em;
       font-weight: bold;
       cursor: pointer;
       user-select: none;
-      padding: 10px;
+      padding: 15px;
+      transition: opacity 0.3s;
     }
-    .lightbox .close { top: 20px; right: 30px; transform: none; font-size: 2.5em; }
-    .lightbox .prev { left: 20px; }
-    .lightbox .next { right: 20px; }
-
-    /* Десктопная версия */
-    @media (min-width: 769px) {
-      main {
-        margin-top: 80px; /* Отступ для фиксированной шапки на десктопе */
-      }
+    .lightbox .close:hover, .lightbox .prev:hover, .lightbox .next:hover {
+      opacity: 0.7;
     }
+    .lightbox .close { top: 30px; right: 40px; transform: none; font-size: 3em; }
+    .lightbox .prev { left: 30px; }
+    .lightbox .next { right: 30px; }
 
     /* Мобильная версия */
     @media (max-width: 768px) {
       body {
-        padding-top: 70px; /* Отступ для фиксированной шапки */
+        padding-top: 70px;
       }
       
       header {
-        height: 70px; /* Фиксированная высота */
+        height: 70px;
       }
       
       nav {
@@ -219,7 +230,7 @@
       }
       
       nav .logo {
-        font-size: 1.3em;
+        font-size: 1.4em;
       }
       
       nav ul {
@@ -227,23 +238,38 @@
       }
       
       nav ul li a {
-        font-size: 0.85em;
+        font-size: 0.9em;
         padding: 5px 8px;
       }
       
       main {
-        margin-top: 0; /* На мобильных убираем margin-top т.к. есть padding-top у body */
-        margin-left: 10px;
-        margin-right: 10px;
-        padding: 20px 15px;
+        margin: 0 10px 0 10px;
+        padding: 25px 20px;
+      }
+      
+      h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+      }
+      
+      p {
+        font-size: 1em;
+        line-height: 1.6;
       }
       
       .services {
         grid-template-columns: 1fr;
+        gap: 15px;
       }
       
       .gallery {
         grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      .card, .advantage {
+        padding: 20px 15px;
+        font-size: 1em;
       }
       
       .fixed-buttons {
@@ -265,9 +291,8 @@
         margin-bottom: 40px;
       }
       
-      h2 {
-        font-size: 1.4em;
-        margin-top: 10px;
+      .contacts {
+        font-size: 1em;
       }
     }
 
@@ -291,6 +316,10 @@
       nav ul li a {
         font-size: 0.8em;
         padding: 4px 6px;
+      }
+      
+      main {
+        padding: 20px 15px;
       }
     }
   </style>
@@ -380,18 +409,15 @@
   const header = document.getElementById('mainHeader');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) { // Начинаем работать после 100px скролла
+    if (window.scrollY > 100) {
       if (window.scrollY > lastScrollY) {
-        // Скроллим вниз - скрываем
         header.classList.add('scrolled');
         header.classList.remove('visible');
       } else {
-        // Скроллим вверх - показываем
         header.classList.remove('scrolled');
         header.classList.add('visible');
       }
     } else {
-      // Вверху страницы - всегда показываем
       header.classList.remove('scrolled');
       header.classList.add('visible');
     }
