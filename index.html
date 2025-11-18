@@ -185,19 +185,41 @@
     /* Исправление для мобильных устройств */
     @media (max-width: 768px) {
       main {
-        margin-top: 130px;
+        margin-top: 160px !important; /* УВЕЛИЧЕН ОТСТУП */
         padding: 20px 15px;
       }
       
-      nav ul { flex-direction: column; gap: 10px; }
-      header nav { flex-direction: column; gap: 10px; }
+      header {
+        padding: 10px 0;
+        height: auto;
+        min-height: 140px; /* ФИКСИРОВАННАЯ ВЫСОТА */
+      }
+      
+      nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 10px 15px;
+      }
       
       nav .logo {
         font-size: 1.4em;
+        text-align: center;
       }
       
       nav ul {
-        gap: 15px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        width: 100%;
+      }
+      
+      nav ul li {
+        width: 100%;
+      }
+      
+      nav ul li a {
+        display: block;
+        padding: 8px 0;
       }
       
       .services {
@@ -207,12 +229,26 @@
       .gallery {
         grid-template-columns: 1fr;
       }
+      
+      .fixed-buttons {
+        bottom: 10px;
+        right: 10px;
+      }
+      
+      .fixed-buttons a {
+        padding: 10px 15px;
+        font-size: 0.9em;
+      }
     }
 
-    @media (max-width: 600px) {
+    /* Для очень маленьких экранов */
+    @media (max-width: 480px) {
       main {
-        margin-top: 140px !important;
-        padding: 20px 15px;
+        margin-top: 170px !important; /* ЕЩЕ БОЛЬШЕ МЕСТА */
+      }
+      
+      header {
+        min-height: 150px;
       }
     }
   </style>
@@ -273,7 +309,7 @@
   <section id="contacts">
     <h2>Контакты</h2>
     <div class="contacts">
-      <p>📞 Телефон / все мессенджеры: +375 29-326-41-30</p>
+      <p>📞 Телефон / все мессенджеры: +375 (29) 326-41-30</p>
       <p>💬 Telegram / Viber: один номер, доступен во всех мессенджерах</p>
     </div>
   </section>
